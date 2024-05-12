@@ -13,6 +13,16 @@ def handle_form():
         data = request.json
         agency_name = data.get('agencyName')
         call_type = data.get('callType')
+        phone_number = data.get('phoneNumber')  # Get phone number from incoming data
+
+        if call_type == 'salesCall':
+            task = f'Youre a customer support representative for {agency_name} insurance brokerage. Youre calling a customer' \
+                   f'to let them know about a new innovative life insurance product. Keep the call very professional and brief. Dont' \
+                   f'answer any questions that dont relate to insurance.' \
+
+        else:
+            task = f'Youre a customer support representative for {agency_name} insurance brokerage. Youre calling a customer' \
+                   f'to let them know their general liability policy is up for renewal next month. Keep the call very professional and brief.' \
 
         # Ensure mandatory data is present
         if not agency_name or not call_type:
@@ -26,9 +36,9 @@ def handle_form():
 
         # Update the data payload with dynamic content
         bland_data = {
-            "phone_number": "+16467059086",  # Example phone number
+            "phone_number": phone_number,  # Example phone number
             "from": None,  # To match your curl request during testing
-            "task": call_type,
+            "task": task,
             "model": "enhanced",
             "language": "eng",
             "voice": "maya",

@@ -62,3 +62,4 @@ PyMuPDF
 fillpdf
 PyPDF2
 gunicorn
+flask_cors

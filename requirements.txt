@@ -61,3 +61,4 @@ wheel==0.41.2
 PyMuPDF
 fillpdf
 PyPDF2
+gunicorn

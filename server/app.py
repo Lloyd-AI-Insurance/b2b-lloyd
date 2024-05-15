@@ -3,17 +3,12 @@ from flask_cors import CORS
 import requests
 import traceback
 
-app = Flask(__name__, static_folder='frontend')
+app = Flask(__name__, static_folder='../frontend', static_url_path='/')
 CORS(app, resources={r"/submitForm": {"origins": "http://localhost:5173"}})
 
 @app.route('/')
-def serve_index():
+def home():
     return send_from_directory(app.static_folder, 'index.html')
-
-@app.route('/<path:path>')
-def serve_static(path):
-    return send_from_directory(app.static_folder, path)
-
 
 
 @app.route('/submitForm', methods=['POST'])

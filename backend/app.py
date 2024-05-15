@@ -4,7 +4,7 @@ import requests
 import traceback
 
 app = Flask(__name__, static_folder='../frontend', static_url_path='/')
-CORS(app, resources={r"/submitForm": {"origins": "http://localhost:5173"}})
+CORS(app, resources={r"/submitForm": {"origins": "*"}})
 
 @app.route('/')
 def home():

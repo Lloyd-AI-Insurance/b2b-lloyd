@@ -6,6 +6,11 @@ import traceback
 app = Flask(__name__)
 CORS(app, resources={r"/submitForm": {"origins": "http://localhost:5173"}})
 
+@app.route('/', methods=['GET'])
+def home():
+    return "Server is running", 200
+
+
 @app.route('/submitForm', methods=['POST'])
 def handle_form():
     try:

@@ -15,6 +15,7 @@ def serve_static(path):
     return send_from_directory(app.static_folder, path)
 
 
+
 @app.route('/submitForm', methods=['POST'])
 def handle_form():
     try:

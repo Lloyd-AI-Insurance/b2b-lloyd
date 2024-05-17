@@ -23,10 +23,15 @@ def handle_form():
             task = f'Youre a customer support representative for {agency_name} insurance brokerage. Youre calling a customer' \
                    f'to let them know about a new innovative life insurance product. Keep the call very professional and brief. Dont' \
                    f'answer any questions that dont relate to insurance.' \
+                   f'Answer maximum 2 questions or wait a maximum of 20 seconds then politely say that this call is a demo and please contact Lloyd AI to learn more.' \
+                   f'End the call.'
 
         else:
             task = f'Youre a customer support representative for {agency_name} insurance brokerage. Youre calling a customer' \
                    f'to let them know their general liability policy is up for renewal next month. Keep the call very professional and brief.' \
+                   f'answer any questions that dont relate to insurance.' \
+                   f'Answer maximum 2 questions or wait a maximum of 20 seconds then politely say that this call is a demo and please contact Lloyd AI to learn more.' \
+                   f'End the call.'
 
         # Ensure mandatory data is present
         if not agency_name or not call_type:
